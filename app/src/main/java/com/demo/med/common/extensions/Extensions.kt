@@ -5,6 +5,10 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
 
 fun noCrash(enableLog: Boolean = true, func: () -> Unit): String? {
     return try {
@@ -31,6 +35,16 @@ fun Activity.shortToast(message: String) {
 
 fun Activity.hideKeyboard() {
     hideKeyboard(currentFocus ?: View(this))
+}
+
+@Composable
+fun <viewModel : LifecycleObserver> viewModel.observeLifecycleEvents(lifecycle: Lifecycle) {
+    DisposableEffect(lifecycle) {
+        lifecycle.addObserver(this@observeLifecycleEvents)
+        onDispose {
+            lifecycle.removeObserver(this@observeLifecycleEvents)
+        }
+    }
 }
 
 fun Context.hideKeyboard(view: View) {

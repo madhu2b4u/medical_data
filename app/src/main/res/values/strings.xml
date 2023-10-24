@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Medical Data</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_home_acitivity">HomeAcitivity</string>
 </resources>

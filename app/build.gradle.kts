@@ -9,12 +9,13 @@ plugins {
 
 android {
     namespace = "com.demo.med"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.demo.med"
         minSdk = 26
-        targetSdk = 33
+        //noinspection EditedTargetSdkVersion
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -55,7 +56,8 @@ android {
     buildTypes {
         getByName("debug") {
             (project.findProperty("baseUrl") as String?)?.let {
-                buildConfigField("String", "BASE_URL",
+                buildConfigField(
+                    "String", "BASE_URL",
                     it
                 )
             }
@@ -76,11 +78,16 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("com.google.dagger:hilt-android:2.44")
@@ -103,7 +110,19 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
-    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.compose.material:material-icons-extended:1.5.3")
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.2")
+    implementation ("androidx.compose.runtime:runtime-livedata:1.5.4")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.1.0")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.6.4")
+
+
+
+
+
+
 }
 
 // Allow references to generated code
