@@ -1,4 +1,4 @@
-package com.demo.med.home.presentation
+package com.demo.med.home.presentation.homescreen
 
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LifecycleObserver

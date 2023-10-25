@@ -9,25 +9,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
-
-fun noCrash(enableLog: Boolean = true, func: () -> Unit): String? {
-    return try {
-        func()
-        null
-    } catch (e: Exception) {
-        if (enableLog)
-            e.printStackTrace()
-        e.message
-    }
-}
+import com.google.gson.Gson
 
 fun View.show() {
     this.visibility = View.VISIBLE
 }
 
-fun View.hide() {
-    this.visibility = View.GONE
+fun <A> String.fromJson(type: Class<A>): A {
+    return Gson().fromJson(this, type)
 }
+
+fun <A> A.toJson(): String? {
+    return Gson().toJson(this)
+}
+
 
 fun Activity.shortToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

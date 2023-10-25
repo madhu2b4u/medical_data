@@ -9,7 +9,7 @@ import com.demo.med.common.Result
 import com.demo.med.common.Status
 import com.demo.med.database.entites.HealthData
 import com.demo.med.home.domain.HomeUseCase
-import com.demo.med.home.presentation.HomeViewModel
+import com.demo.med.home.presentation.homescreen.HomeViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
