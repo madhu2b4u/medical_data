@@ -113,15 +113,11 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.compose.material:material-icons-extended:1.5.3")
     implementation("androidx.compose.ui:ui-text-google-fonts:1.5.2")
-    implementation ("androidx.compose.runtime:runtime-livedata:1.5.4")
-    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.1.0")
-    testImplementation ("androidx.arch.core:core-testing:2.1.0")
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.6.4")
-    implementation ("androidx.navigation:navigation-compose:2.4.2")
-
-
-
-
+    implementation("androidx.compose.runtime:runtime-livedata:1.5.4")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.6.4")
+    implementation("androidx.navigation:navigation-compose:2.4.2")
 
 
 }
